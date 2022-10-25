@@ -1,5 +1,5 @@
 // GENERAL SETTINGS
-var gameWidth = 1024, gameHeight = 1024;
+var gameWidth = 0, gameHeight = 0;
 
 var cetys;
 
@@ -10,10 +10,12 @@ var cetysButton;
 var clicks = 0;
 
 function preload() {
-  cetysButton = loadImage("logo_cetys.png");
+  cetysButton = loadImage("logo_c.png");
 }
 
 function setup() {
+  gameWidth = 1024;
+  gameHeight = 1024;
   createCanvas(windowWidth, windowHeight);
   
   cetys = createImage(1, 1);
@@ -42,13 +44,10 @@ function draw() {
   drawingContext.shadowColor = 'gray';
   gui();
   
-  textAlign(CENTER);
-  textSize(40);
-  fill(color(256, 256, 256));
-  text(clicks, (gameWidth)/2, 40);
-  
   cetys = image(cetysButton, cetysX, cetysY, (cetysButton.width-cetysSizeOffsetter)/4, (cetysButton.height-cetysSizeOffsetter)/4);
   
+  clickAnim();
+
   clicker();
 }
 
@@ -61,6 +60,21 @@ function gui() {
   textSize(25);
   fill(color(100, 100, 100));
   text("CETYS CLICKER", gameWidth/2, gameHeight-10);
+
+  textAlign(CENTER);
+  textSize(40);
+  fill(color(256, 256, 256));
+  text(clicks, (gameWidth)/2, 40);
+
+  textAlign(CENTER);
+  textSize(20);
+  fill(color(100, 100, 100));
+  text("By: 0^1", 40, gameHeight-10);
+}
+
+// ANIMATION WHEN CLICKED!
+function clickAnim() {
+  
 }
 
 var cetysSizeOffsetter = 0;
