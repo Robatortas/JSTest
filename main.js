@@ -71,10 +71,12 @@ function gui() {
   text("By: 0^1", 40, gameHeight-10);
 
   // SHOP BUTTON
-  rect(0, 0, 50, 50);
-  textSize(33);
-  fill(color(256, 256, 256));
-  text("$", 24, 35);
+  // rect(0, 0, 50, 50);
+  // textSize(33);
+  // fill(color(256, 256, 256));
+  // text("$", 24, 35);
+
+  assignButton(0, 0, 50, 50, 0, 0);
 
   shop();
 }
@@ -94,7 +96,7 @@ var cetysSizeOffsetter = 0;
 
 var clickerTime = 0;
 function clicker() {
-  if(pressMouseOnImage(cetysX, cetysY)) {
+  if(pressMouseOnImage(cetysX-cetysSizeOffsetter, cetysY-cetysSizeOffsetter)) {
     clickerTime++
     if(clickerTime == 1) {
       clicks++;
@@ -107,8 +109,9 @@ function clicker() {
 }
 
 var button;
-function assignButton(width, height, x, y, color, button) {
-  
+function assignButton(x, y, width, height, color, button) {
+  rect(x, y, width, height);
+
 }
 
 // Weird looking ass code.
