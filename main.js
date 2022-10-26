@@ -23,6 +23,8 @@ function setup() {
   
   console.log("WELCOME TO CETYS CLICKER!");
   
+  assignButton();
+
   clicker();
 }
 
@@ -70,6 +72,13 @@ function gui() {
   textSize(20);
   fill(color(100, 100, 100));
   text("By: 0^1", 40, gameHeight-10);
+
+  shop();
+}
+
+// THE SHOP MENU!
+function shop() {
+  rect(0, 0, 50, 50);
 }
 
 // ANIMATION WHEN CLICKED!
@@ -91,7 +100,13 @@ function clicker() {
     clickerTime = 0;
     cetysSizeOffsetter = 0;
   }
-  
+}
+
+var button;
+function assignButton(button) {
+  button = createButton("Shop");
+  button.position(10, 10);
+  button.mousePressed();
 }
 
 // Weird looking ass code.
