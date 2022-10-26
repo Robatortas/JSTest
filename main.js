@@ -18,8 +18,6 @@ function setup() {
   gameHeight = 1024;
   createCanvas(windowWidth, windowHeight);
   
-  cetys = createImage(1, 1);
-  // cetys.addImage("CetysButton", cetysButton);
   
   console.log("WELCOME TO CETYS CLICKER!");
   
@@ -68,17 +66,23 @@ function gui() {
   fill(color(256, 256, 256));
   text(clicks, (gameWidth)/2, 40);
 
-  textAlign(CENTER);
   textSize(20);
   fill(color(100, 100, 100));
   text("By: 0^1", 40, gameHeight-10);
+
+  // SHOP BUTTON
+  rect(0, 0, 50, 50);
+  textSize(33);
+  fill(color(256, 256, 256));
+  text("$", 24, 35);
 
   shop();
 }
 
 // THE SHOP MENU!
 function shop() {
-  rect(0, 0, 50, 50);
+
+
 }
 
 // ANIMATION WHEN CLICKED!
@@ -103,10 +107,8 @@ function clicker() {
 }
 
 var button;
-function assignButton(button) {
-  button = createButton("Shop");
-  button.position(10, 10);
-  button.mousePressed();
+function assignButton(width, height, x, y, color, button) {
+  
 }
 
 // Weird looking ass code.
