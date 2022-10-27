@@ -33,6 +33,8 @@ function setup() {
   clicker();
 }
 
+let button;
+
 var cetysX=0, cetysY=0;
 var shopButtonX=0, shopButton=0;
 
@@ -40,6 +42,8 @@ function draw() {
   gameWidth = windowWidth;
   gameHeight = windowHeight;
   
+button = new Button().build(0, 0, 50, 50, 0);;
+
   background(230);
   
   cetysX = ((gameWidth-250) + (cetysSizeOffsetter/4))/2;
@@ -59,6 +63,7 @@ function draw() {
 }
 
 function gui() {
+
   // Top Yellow Bar
   textAlign(CENTER);
   fill(color(255, 204, 0))
@@ -98,7 +103,6 @@ function shop() {
 
 // ANIMATION WHEN CLICKED!
 function clickAnim() {
-  
 }
 
 var cetysSizeOffsetter = 0;
@@ -122,18 +126,19 @@ class Button {
   clickTime = 0;
   sizeOffset = 0;
   isClicked = false;
-  constructor(x, y, width, height, color, button) {
-    rect(x+(sizeOffset/2), y+(sizeOffset/2), width-sizeOffset, height-sizeOffset);
+
+  build(x, y, width, height, button) {
+    rect(x+(this.sizeOffset/2), y+(this.sizeOffset/2), width-this.sizeOffset, height-this.sizeOffset);
   
-    if(pressMouseOnImage(x - sizeOffset, y - sizeOffset, width, height)) {
-      clickTime++;
+    if(pressMouseOnImage(x - this.sizeOffset, y - this.sizeOffset, width, height)) {
+      this.buildclickTime++;
       if(clickTime == 1) {
         isClicked = true;
-        sizeOffset = 3;
+        this.sizeOffset = 3;
       }
     } else {
-      clickTime = 0;
-      sizeOffset = 0;
+      this.clickTime = 0;
+      this.sizeOffset = 0;
     }
   }
 }
