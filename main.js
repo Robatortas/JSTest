@@ -1,3 +1,9 @@
+/*
+* Code is not well written which is kind of evident.
+* Everything is being written in one class cuz why not??
+* It's just a Clicker Game, why would I make it have seamless code anyway?
+*/
+
 // GENERAL SETTINGS
 var gameWidth = 0, gameHeight = 0;
 
@@ -96,8 +102,8 @@ var cetysSizeOffsetter = 0;
 
 var clickerTime = 0;
 function clicker() {
-  if(pressMouseOnImage(cetysX-cetysSizeOffsetter, cetysY-cetysSizeOffsetter)) {
-    clickerTime++
+  if(pressMouseOnImage((gameWidth-250)/2, (gameHeight-300)/2, cetysButton)) {
+    clickerTime++;
     if(clickerTime == 1) {
       clicks++;
       cetysSizeOffsetter = 20;
@@ -110,15 +116,17 @@ function clicker() {
 
 var button;
 function assignButton(x, y, width, height, color, button) {
+  var sizeOffset = 0;
   rect(x, y, width, height);
 
+  // if(pressMouseOnImage(x - sizeOffset, y - sizeOffset, )) {
+
+  // }
 }
 
 // Weird looking ass code.
-function pressMouseOnImage(containerX, containerY) {  
-  if(mouseX <= containerX + cetysButton.width/4 && mouseX >= containerX && mouseY <= containerY + cetysButton.height/4 && mouseY >= containerY && mouseIsPressed) {
-    return true;
-  }
+function pressMouseOnImage(containerX, containerY, container) {  
+  if(mouseX <= containerX + container.width/4 && mouseX >= containerX && mouseY <= containerY + container.height/4 && mouseY >= containerY && mouseIsPressed) return true;
   return false;
 }
 
