@@ -33,8 +33,8 @@ function draw() {
 
   gui();
 
-  click(cetys);
-  if(click(cetys)) money++;
+  render();
+  tick();
 
   drawSprites();
 }
@@ -57,17 +57,4 @@ function gui() {
   textSize(20);
   fill(color(100, 100, 100));
   text("By: 0^1", 40, windowHeight-10);
-}
-var clickTime = 0;
-function click(entity) {
-  if(mousePressedOver(entity)) {
-    clickTime++
-    // 2 TO LET THE LIBRARY THINK LOL
-    if(clickTime == 2) {
-      return true;
-    }
-  } else {
-    clickTime = 0;
-    return false;
-  }
 }
