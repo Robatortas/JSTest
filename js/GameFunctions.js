@@ -2,22 +2,22 @@
 * Class utilized for the game functions and logic.
 */
 
+var entity;
+
+var button = new Button(100, 100, 50, 50);
 
 // To render stuff.
 function render() {
-
+  button.render();
 }
 
 // Goes the same direction as render, it's just for organizations sake!
 function tick() {
-    click(cetys);
-    if(click(cetys)) money++;
-
-    
 }
 
 var clickTime = 0;
 function click(entity) {
+  this.entity = entity;
   if(mousePressedOver(entity)) {
     clickTime++
     // 2 TO LET THE LIBRARY THINK LOL
@@ -28,4 +28,12 @@ function click(entity) {
     clickTime = 0;
     return false;
   }
+}
+
+function mainClicker() {
+  money++;
+}
+
+function mouseClicked() {
+  mainClicker();
 }

@@ -2,7 +2,7 @@
 var c_logo;
 
 // ENTITIES
-var cetys;
+var cetys, shop;
 
 // GAME VARS
 var money = 0;
@@ -28,8 +28,6 @@ function setup() {
 
 function draw() {
   background(230);
-
-  text("Hello World!", 10, 10);
 
   gui();
 
@@ -57,4 +55,13 @@ function gui() {
   textSize(20);
   fill(color(100, 100, 100));
   text("By: 0^1", 40, windowHeight-10);
+
+  // SHOP BUTTON
+  shop = rect(0, 0, 50, 50);
+  textSize(33);
+  fill(color(256, 256, 256));
+  text("$", 24, 35);
+
+  // click(shop);
+  // if(click(shop)) money++;
 }
