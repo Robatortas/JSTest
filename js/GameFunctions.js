@@ -31,7 +31,7 @@ function click(entity) {
 }
 
 function mainClicker() {
-  money++;
+  // money++;
 }
 
 function mouseClicked() {

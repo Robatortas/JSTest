@@ -1,6 +1,7 @@
 var width, height;
 var x, y;
 var color;
+var clicked = false;
 
 /*
 * Coding on a weird position in bed while dying of sleep hits different.
@@ -29,5 +30,10 @@ class Button {
 }
 
 function mouseClicked() {
-    
+    fill(0);
+    rect(100, 100, 50, 50);
+    if(mouseX + mouseY >= x + y && mouseX + mouseY <= x+y) {
+        clicked = true;
+        money++;
+    } else clicked = false;
 }
