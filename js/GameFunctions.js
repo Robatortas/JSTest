@@ -4,11 +4,11 @@
 
 var entity;
 
-var button = new Button(100, 100, 50, 50);
+// const button = new Button(100, 100, 50, 50, 100);
 
 // To render stuff.
 function render() {
-  button.render();
+  // button.render();
 }
 
 // Goes the same direction as render, it's just for organizations sake!

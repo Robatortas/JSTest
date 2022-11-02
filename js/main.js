@@ -57,7 +57,8 @@ function gui() {
   text("By: 0^1", 40, windowHeight-10);
 
   // SHOP BUTTON
-  shop = rect(0, 0, 50, 50);
+  // shop = rect(0, 0, 50, 50);
+  shop = new Button(0, 0, 50, 50, 100);
   textSize(33);
   fill(color(256, 256, 256));
   text("$", 24, 35);
