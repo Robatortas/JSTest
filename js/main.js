@@ -12,8 +12,8 @@ function preload() {
   c_logo = loadImage("logo_c.png");
 }
 
-function setup() {
-  createCanvas(windowWidth, windowHeight);
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
 
   drawingContext.shadowOffsetX = 0;
   drawingContext.shadowOffsetY = 0;
@@ -27,7 +27,11 @@ function setup() {
 }
 
 function draw() {
+  resizeCanvas(windowWidth, windowHeight);
   background(230);
+
+  cetys.x = windowWidth/2;
+  cetys.y = windowHeight/2;
 
   gui();
 
@@ -59,10 +63,19 @@ function gui() {
   // SHOP BUTTON
   // shop = rect(0, 0, 50, 50);
   shop = new Button(0, 0, 50, 50, 100);
+  shop.render();
   textSize(33);
   fill(color(256, 256, 256));
   text("$", 24, 35);
 
   // click(shop);
   // if(click(shop)) money++;
+  rect(cetys.x-cetys.width/8, cetys.y-cetys.height/8, cetys.width/4, cetys.height/4);
+}
+
+function mouseClicked() {
+  if(cetys.x-cetys.width/8 > cetys.x && cetys.y-cetys.height/8 > cetys.y) {
+      clicked = true;
+      money++;
+  } else clicked = false;
 }

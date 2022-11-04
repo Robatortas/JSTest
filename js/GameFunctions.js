@@ -4,7 +4,7 @@
 
 var entity;
 
-// const button = new Button(100, 100, 50, 50, 100);
+// const button = new Button(100, 100, 50, 50], 100);
 
 // To render stuff.
 function render() {
@@ -28,12 +28,4 @@ function click(entity) {
     clickTime = 0;
     return false;
   }
-}
-
-function mainClicker() {
-  // money++;
-}
-
-function mouseClicked() {
-  mainClicker();
 }

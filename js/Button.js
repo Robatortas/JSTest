@@ -16,7 +16,8 @@ class Button {
         this.width = width;
         this.height = height;
         this.color = color;
-        this.render();
+        // this.render();
+        // mouseClicked();
     }
 
     render() {
@@ -27,13 +28,4 @@ class Button {
     clicked() {
 
     }
-}
-
-function mouseClicked() {
-    fill(0);
-    rect(100, 100, 50, 50);
-    if(mouseX + mouseY >= x + y && mouseX + mouseY <= x+y) {
-        clicked = true;
-        money++;
-    } else clicked = false;
 }
