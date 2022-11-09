@@ -4,28 +4,37 @@
 
 var entity;
 
-// const button = new Button(100, 100, 50, 50], 100);
+// SHOP vars
+var shopButton;
+var shopping = false;
 
 // To render stuff.
 function render() {
-  // button.render();
+  // interface();
 }
 
 // Goes the same direction as render, it's just for organizations sake!
 function tick() {
 }
 
-var clickTime = 0;
-function click(entity) {
-  this.entity = entity;
-  if(mousePressedOver(entity)) {
-    clickTime++
-    // 2 TO LET THE LIBRARY THINK LOL
-    if(clickTime == 2) {
-      return true;
-    }
-  } else {
-    clickTime = 0;
-    return false;
+// HITBOX FOR CLICKING STUFF!
+function hitbox(x, y, width, height) {
+  if(mouseX > x - width && mouseY > y - height && mouseX < x + width && mouseY < y + height) {
+    return true;
   }
+  return false;
+}
+
+function clicking() {
+  // Main Cetys Button
+  if(hitbox((windowWidth/2), (windowHeight/2), cetys.width/8, cetys.height/8)) {
+    money++;
+  }
+
+  // Shop Button
+  if(hitbox(shopButton.x, shopButton.y, shopButton.width, shopButton.height)) {
+    shopping = true
+  }
+
+
 }

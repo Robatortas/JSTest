@@ -2,11 +2,10 @@
 var c_logo;
 
 // ENTITIES
-var cetys, shop;
+var cetys;
 
 // GAME VARS
 var money = 0;
-
 
 function preload() {
   c_logo = loadImage("logo_c.png");
@@ -14,11 +13,6 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
-  drawingContext.shadowOffsetX = 0;
-  drawingContext.shadowOffsetY = 0;
-  drawingContext.shadowBlur = 30;
-  drawingContext.shadowColor = 'gray';
 
   cetys = createSprite(windowWidth/2, windowHeight/2, 1024, 1024);
   cetys.addImage("cetys", c_logo);
@@ -30,15 +24,22 @@ function draw() {
   resizeCanvas(windowWidth, windowHeight);
   background(230);
 
+  drawingContext.shadowOffsetX = 0;
+  drawingContext.shadowOffsetY = 0;
+  drawingContext.shadowBlur = 30;
+  drawingContext.shadowColor = 'gray';
+
   cetys.x = windowWidth/2;
   cetys.y = windowHeight/2;
 
   gui();
 
-  render();
   tick();
 
   drawSprites();
+
+  // SHOP STUFF!
+  if(shopping) interface();
 }
 
 function gui() {
@@ -61,23 +62,14 @@ function gui() {
   text("By: 0^1", 40, windowHeight-10);
 
   // SHOP BUTTON
+  shopButton = new Button(0, 0, 50, 50, 100);
+  shopButton.render();
   // shop = rect(0, 0, 50, 50);
-  shop = new Button(0, 0, 50, 50, 100);
-  shop.render();
   textSize(33);
   fill(color(256, 256, 256));
   text("$", 24, 35);
-
-  // click(shop);
-  // if(click(shop)) money++;
-  rect((windowWidth/2) - cetys.width/8, (windowHeight/2) - cetys.height/8, cetys.width/4, cetys.height/4);
 }
 
-
-
 function mouseClicked() {
-  if(mouseX > (windowWidth/2) - cetys.width/8 && mouseY > (windowHeight/2) - cetys.height/8 && mouseX < (windowWidth/2) + cetys.width/8 && mouseY < (windowHeight/2) + cetys.height/8) {
-      clicked = true;
-      money++;
-  } else clicked = false;
+  clicking();
 }
