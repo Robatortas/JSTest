@@ -16,13 +16,14 @@ function setup() {
 
   cetys = createSprite(windowWidth/2, windowHeight/2, 1024, 1024);
   cetys.addImage("cetys", c_logo);
-  cetys.scale = 0.25;
   cetys.visible = true;
 }
 
 function draw() {
   resizeCanvas(windowWidth, windowHeight);
   background(230);
+
+  cetys.scale = 0.25 - cetysOffsetSize;
 
   drawingContext.shadowOffsetX = 0;
   drawingContext.shadowOffsetY = 0;

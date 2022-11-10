@@ -4,6 +4,8 @@
 
 var entity;
 
+var cetysOffsetSize = 0;
+
 // SHOP vars
 var shopButton;
 var shopping = false;
@@ -15,6 +17,7 @@ function render() {
 
 // Goes the same direction as render, it's just for organizations sake!
 function tick() {
+  cetysOffsetSize = 0;
 }
 
 // HITBOX FOR CLICKING STUFF!
@@ -29,12 +32,19 @@ function clicking() {
   // Main Cetys Button
   if(hitbox((windowWidth/2), (windowHeight/2), cetys.width/8, cetys.height/8)) {
     money++;
+    cetysOffsetSize = 0.005;
   }
+
+  // SHOPPING STUFF!
 
   // Shop Button
   if(hitbox(shopButton.x, shopButton.y, shopButton.width, shopButton.height)) {
     shopping = true
   }
 
+  // SHOP EXIT
+  if(hitbox(exitButton.x, exitButton.y, exitButton.width, exitButton.height)) {
+    shopping = false;
+}
 
 }
