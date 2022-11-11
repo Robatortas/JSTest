@@ -1,7 +1,6 @@
 var exitButton;
 
 function interface() {
-    
     fill(color(205+20, 154+20, 0));
     rect(0, 0, windowWidth/3, windowHeight);
     
@@ -29,5 +28,16 @@ function interface() {
 
     textSize(30);
     fill(color(255, 255, 255));
-    text("UNAVAILABLE\n (for now)", (windowWidth/6), windowHeight/2);
+    text("UNAVAILABLE\n (for now)", (windowWidth/6), windowHeight/2);  
+}
+
+var items = [Teacher, Student];
+
+function items() {
+    for(let i = 0; i < items.length; i++) {
+        
+
+
+        
+    }
 }
