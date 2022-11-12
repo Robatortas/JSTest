@@ -28,16 +28,19 @@ function interface() {
 
     textSize(30);
     fill(color(255, 255, 255));
-    text("UNAVAILABLE\n (for now)", (windowWidth/6), windowHeight/2);  
+    text("UNAVAILABLE\n (for now)", (windowWidth/6), windowHeight/2); 
+
+    drawingContext.shadowBlur = 10;
+    content();
 }
 
-var items = [Teacher, Student];
+var items = ["Teacher", "Student"]
 
-function items() {
-    for(let i = 0; i < items.length; i++) {
-        
+function content() {
+    text(items[1], 100, 100);
 
-
-        
+    fill(color(205+20, 154+20, 100));
+    for(let i = 0; i < 5; i++) {
+        rect(10, 60+(i*90), (windowHeight/2)-15, 80);
     }
-    }
+}
